@@ -13,17 +13,6 @@ export default function Navbar() {
   const [active, setActive]       = useState("Work");
   const [scrolled, setScrolled]   = useState(false);
 
-  // Inject CSS once on mount
-  useEffect(() => {
-    const id = "portfolio-navbar-styles";
-    if (!document.getElementById(id)) {
-      const tag = document.createElement("style");
-      tag.id = id;
-      tag.textContent = css;
-      document.head.appendChild(tag);
-    }
-  }, []);
-
   // Track scroll for the "scrolled" shadow state
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
